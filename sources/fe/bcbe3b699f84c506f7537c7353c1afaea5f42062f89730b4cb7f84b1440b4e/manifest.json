@@ -1,0 +1,31 @@
+{
+  "code_hash": "febcbe3b699f84c506f7537c7353c1afaea5f42062f89730b4cb7f84b1440b4e",
+  "source_bundle_hash": "0a2117e40e44c5b21c18972c62f996412e45377c4068e371d5b46dcf305fb9fd",
+  "payment_tx_hash": "42c0641941514054454ac343f8c2f56421856750190cc5f49a1fef8aa42c38a1",
+  "verified_at": 1791856814,
+  "compiler": {
+    "language": "func",
+    "version": "0.4.6",
+    "entrypoint": "contracts/vote_d_app.fc",
+    "params": {
+      "compiler_version": "0.4.6"
+    }
+  },
+  "source_map": null,
+  "files": [
+    {
+      "path": "contracts/imports/stdlib.fc",
+      "content_hash": "c89ed4650e333896513036fa7a0ded70c90e5599e4ab527f21715a0b45142119",
+      "include_in_command": false,
+      "is_stdlib": false,
+      "has_include_directives": true
+    },
+    {
+      "path": "contracts/vote_d_app.fc",
+      "content_hash": "c54d0c908a332bd986f93d153abd16f85a6ec227c11839d6a3d60aa8128c54f4",
+      "include_in_command": true,
+      "is_stdlib": false,
+      "has_include_directives": true
+    }
+  ]
+}

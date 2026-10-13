@@ -1,0 +1,101 @@
+#include "imports/stdlib.fc";
+
+;; -----------------------------------------
+;; iansaviour
+;; -----------------------------------------
+
+int equal_slices (slice a, slice b) asm "SDEQ";
+
+;; -----------------------------------------
+;; 1. STORAGE: Reading and Writing to Cells
+;; -----------------------------------------
+
+;; Reads data from the contract's persistent storage
+(slice, int, int) load_data() inline {
+    var ds = get_data().begin_parse();
+    return (
+        ds~load_msg_addr(), ;; owner_address (Creator of the poll)
+        ds~load_uint(32),   ;; yes_votes (32-bit integer)
+        ds~load_uint(32)    ;; no_votes (32-bit integer)
+    );
+}
+
+;; Saves data back to the contract's persistent storage
+() save_data(slice owner_address, int yes_votes, int no_votes) impure inline {
+    set_data(begin_cell()
+        .store_slice(owner_address)
+        .store_uint(yes_votes, 32)
+        .store_uint(no_votes, 32)
+        .end_cell());
+}
+
+;; -----------------------------------------
+;; 2. MESSAGES: Handling incoming transactions
+;; -----------------------------------------
+
+;; recv_internal is the main entry point for all incoming smart contract messages
+() recv_internal(int my_balance, int msg_value, cell in_msg_full, slice in_msg_body) impure {
+    ;; Ignore empty messages (e.g., simple TON coin transfers with no data)
+    if (in_msg_body.slice_empty?()) { 
+        return (); 
+    }
+
+    ;; Parse the incoming message to get the sender's address and flags
+    slice cs = in_msg_full.begin_parse();
+    int flags = cs~load_uint(4);
+    if (flags & 1) { ;; Ignore bounced messages
+        return ();
+    }
+    
+    slice sender_address = cs~load_msg_addr();
+
+    ;; Read the operation code (op) from the message body
+    int op = in_msg_body~load_uint(32);
+    
+    ;; Load current state
+    var (owner_address, yes_votes, no_votes) = load_data();
+
+    ;; Op 1: Vote YES
+    if (op == 1) {
+        save_data(owner_address, yes_votes + 1, no_votes);
+        return ();
+    }
+
+    ;; Op 2: Vote NO
+    if (op == 2) {
+        save_data(owner_address, yes_votes, no_votes + 1);
+        return ();
+    }
+
+    ;; Op 3: Change Owner
+    if (op == 3) {
+        ;; 1. Security check: Only the current owner can change the owner
+        throw_unless(401, equal_slices(sender_address, owner_address));
+
+        ;; 2. Read the new owner address from the incoming transaction body
+        slice new_owner = in_msg_body~load_msg_addr();
+
+        ;; 3. Save the new owner, keeping the current vote counts exactly the same
+        save_data(new_owner, yes_votes, no_votes);
+        return ();
+    }
+
+    ;; If the op code doesn't match 1 or 2, throw an error
+    throw(0xffff); 
+}
+
+;; -----------------------------------------
+;; 3. GETTERS: Reading data from the outside
+;; -----------------------------------------
+
+;; Allows front-end apps to read the current vote count
+(int, int) get_votes() method_id {
+    var (_, yes_votes, no_votes) = load_data();
+    return (yes_votes, no_votes);
+}
+
+;; Allows front-end apps to see who created the poll
+slice get_owner() method_id {
+    var (owner_address, _, _) = load_data();
+    return owner_address;
+}
