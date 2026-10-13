@@ -1,0 +1,453 @@
+{
+  "abi_schema_version": "1.0",
+  "contract_name": "SbtCollection",
+  "unique_types": [
+    {
+      "kind": "void"
+    },
+    {
+      "kind": "int"
+    },
+    {
+      "kind": "slice"
+    },
+    {
+      "kind": "cell"
+    },
+    {
+      "kind": "builder"
+    },
+    {
+      "kind": "bool"
+    },
+    {
+      "kind": "coins"
+    },
+    {
+      "kind": "address"
+    },
+    {
+      "kind": "intN",
+      "n": 32
+    },
+    {
+      "kind": "uintN",
+      "n": 32
+    },
+    {
+      "kind": "intN",
+      "n": 64
+    },
+    {
+      "kind": "uintN",
+      "n": 64
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "MintBadge"
+    },
+    {
+      "kind": "uintN",
+      "n": 8
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "SetIssuer"
+    },
+    {
+      "kind": "addressOpt"
+    },
+    {
+      "kind": "uintN",
+      "n": 16
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "AddKind"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "WithdrawExcess"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "SbtCollectionStorage"
+    },
+    {
+      "kind": "mapKV",
+      "key_ty_idx": 13,
+      "value_ty_idx": 3
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Excesses"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "InitBadge"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "BadgeMintedEvent"
+    },
+    {
+      "kind": "uintN",
+      "n": 256
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        15,
+        16,
+        16,
+        9,
+        11
+      ]
+    }
+  ],
+  "struct_instantiations": [],
+  "alias_instantiations": [],
+  "declarations": [
+    {
+      "kind": "struct",
+      "name": "SbtCollectionStorage",
+      "ty_idx": 19,
+      "fields": [
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "issuer",
+          "ty_idx": 15
+        },
+        {
+          "name": "dailyLimit",
+          "ty_idx": 16
+        },
+        {
+          "name": "day",
+          "ty_idx": 9
+        },
+        {
+          "name": "issuedToday",
+          "ty_idx": 16
+        },
+        {
+          "name": "issuedTotal",
+          "ty_idx": 11
+        },
+        {
+          "name": "content",
+          "ty_idx": 3
+        },
+        {
+          "name": "kinds",
+          "ty_idx": 20
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "MintBadge",
+      "ty_idx": 12,
+      "prefix": {
+        "prefix_num": 1396834305,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "kind",
+          "ty_idx": 13
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "InitBadge",
+      "ty_idx": 22,
+      "prefix": {
+        "prefix_num": 1396834306,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "kind",
+          "ty_idx": 13
+        },
+        {
+          "name": "authority",
+          "ty_idx": 7
+        },
+        {
+          "name": "excessesTo",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "SetIssuer",
+      "ty_idx": 14,
+      "prefix": {
+        "prefix_num": 1396834307,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "issuer",
+          "ty_idx": 15
+        },
+        {
+          "name": "dailyLimit",
+          "ty_idx": 16
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "AddKind",
+      "ty_idx": 17,
+      "prefix": {
+        "prefix_num": 1396834308,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "kind",
+          "ty_idx": 13
+        },
+        {
+          "name": "content",
+          "ty_idx": 3
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "WithdrawExcess",
+      "ty_idx": 18,
+      "prefix": {
+        "prefix_num": 1396834309,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "BadgeMintedEvent",
+      "ty_idx": 23,
+      "prefix": {
+        "prefix_num": 1396867073,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "kind",
+          "ty_idx": 13
+        },
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "index",
+          "ty_idx": 24
+        },
+        {
+          "name": "byIssuer",
+          "ty_idx": 5
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Excesses",
+      "ty_idx": 21,
+      "prefix": {
+        "prefix_num": 3576854235,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "storage_ty_idx": 19
+  },
+  "incoming_messages": [
+    {
+      "body_ty_idx": 12
+    },
+    {
+      "body_ty_idx": 14
+    },
+    {
+      "body_ty_idx": 17
+    },
+    {
+      "body_ty_idx": 18
+    }
+  ],
+  "incoming_external": [],
+  "outgoing_messages": [
+    {
+      "body_ty_idx": 21
+    },
+    {
+      "body_ty_idx": 22
+    }
+  ],
+  "emitted_events": [
+    {
+      "body_ty_idx": 23
+    }
+  ],
+  "get_methods": [
+    {
+      "tvm_method_id": 102491,
+      "name": "get_collection_data",
+      "parameters": [],
+      "return_ty_idx": 25
+    },
+    {
+      "tvm_method_id": 92067,
+      "name": "get_nft_address_by_index",
+      "parameters": [
+        {
+          "name": "index",
+          "ty_idx": 1
+        }
+      ],
+      "return_ty_idx": 7
+    },
+    {
+      "tvm_method_id": 68445,
+      "name": "get_nft_content",
+      "parameters": [
+        {
+          "name": "_index",
+          "ty_idx": 1
+        },
+        {
+          "name": "individualContent",
+          "ty_idx": 3
+        }
+      ],
+      "return_ty_idx": 3
+    },
+    {
+      "tvm_method_id": 100816,
+      "name": "badgeAddress",
+      "parameters": [
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "kind",
+          "ty_idx": 13
+        }
+      ],
+      "return_ty_idx": 7
+    },
+    {
+      "tvm_method_id": 67937,
+      "name": "issuerInfo",
+      "parameters": [],
+      "return_ty_idx": 26
+    },
+    {
+      "tvm_method_id": 112677,
+      "name": "hasKind",
+      "parameters": [
+        {
+          "name": "kind",
+          "ty_idx": 13
+        }
+      ],
+      "return_ty_idx": 5
+    }
+  ],
+  "thrown_errors": [
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.NotCollectionOwner",
+      "err_code": 200
+    },
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.NotMinter",
+      "err_code": 201
+    },
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.KindNotAllowed",
+      "err_code": 202
+    },
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.UnknownKind",
+      "err_code": 203
+    },
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.KindExists",
+      "err_code": 204
+    },
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.DailyLimit",
+      "err_code": 205
+    },
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.NotEnoughValue",
+      "err_code": 206
+    },
+    {
+      "kind": "enum_member",
+      "name": "SbtErrors.InvalidMessage",
+      "err_code": 65535
+    }
+  ],
+  "compiler_name": "tolk",
+  "compiler_version": "1.4.2"
+}
