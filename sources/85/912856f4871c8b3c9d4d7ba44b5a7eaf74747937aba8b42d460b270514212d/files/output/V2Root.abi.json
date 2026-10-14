@@ -1,0 +1,1167 @@
+{
+  "abi_schema_version": "1.0",
+  "contract_name": "V2Root",
+  "unique_types": [
+    {
+      "kind": "void"
+    },
+    {
+      "kind": "int"
+    },
+    {
+      "kind": "slice"
+    },
+    {
+      "kind": "cell"
+    },
+    {
+      "kind": "builder"
+    },
+    {
+      "kind": "bool"
+    },
+    {
+      "kind": "coins"
+    },
+    {
+      "kind": "address"
+    },
+    {
+      "kind": "intN",
+      "n": 32
+    },
+    {
+      "kind": "uintN",
+      "n": 32
+    },
+    {
+      "kind": "intN",
+      "n": 64
+    },
+    {
+      "kind": "uintN",
+      "n": 64
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Enter"
+    },
+    {
+      "kind": "addressOpt"
+    },
+    {
+      "kind": "uintN",
+      "n": 16
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "JoinTarget"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 15
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 16
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "CreateParams"
+    },
+    {
+      "kind": "uintN",
+      "n": 8
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 18
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 20
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomEvent"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RegisterPartner"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "SetPartner"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "SetPolicy"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Policy"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "PolicyAddrs"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 27
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 26
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "PublishVersion"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "SetVersionOpen"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "TopUp"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RecoverEnter"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 12
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RootStorage"
+    },
+    {
+      "kind": "uintN",
+      "n": 256
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "VersionInfo"
+    },
+    {
+      "kind": "mapKV",
+      "key_ty_idx": 9,
+      "value_ty_idx": 37
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomInit"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Terms"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "CodeRefs"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 41
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 40
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Accepted"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "EntryAbsent"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Closed"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "ProbeEntry"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "PartnerInit"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "PartnerPolicy"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "EnterFailed"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "InitFailed"
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        1,
+        1,
+        5
+      ]
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "struct_instantiations": [],
+  "alias_instantiations": [],
+  "declarations": [
+    {
+      "kind": "struct",
+      "name": "PolicyAddrs",
+      "ty_idx": 27,
+      "fields": [
+        {
+          "name": "investor",
+          "ty_idx": 13
+        },
+        {
+          "name": "techFund",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Policy",
+      "ty_idx": 26,
+      "fields": [
+        {
+          "name": "paused",
+          "ty_idx": 5
+        },
+        {
+          "name": "feePercent",
+          "ty_idx": 19
+        },
+        {
+          "name": "techBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "partnerBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "partnersEnabled",
+          "ty_idx": 5
+        },
+        {
+          "name": "manualApproval",
+          "ty_idx": 5
+        },
+        {
+          "name": "investorBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "betMin",
+          "ty_idx": 6
+        },
+        {
+          "name": "betMax",
+          "ty_idx": 6
+        },
+        {
+          "name": "seatMargin",
+          "ty_idx": 6
+        },
+        {
+          "name": "surplusToWinner",
+          "ty_idx": 5
+        },
+        {
+          "name": "addrs",
+          "ty_idx": 28
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "CodeRefs",
+      "ty_idx": 41,
+      "fields": [
+        {
+          "name": "accountHash",
+          "ty_idx": 36
+        },
+        {
+          "name": "accountDepth",
+          "ty_idx": 14
+        },
+        {
+          "name": "profileHash",
+          "ty_idx": 36
+        },
+        {
+          "name": "profileDepth",
+          "ty_idx": 14
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Terms",
+      "ty_idx": 40,
+      "fields": [
+        {
+          "name": "feePercent",
+          "ty_idx": 19
+        },
+        {
+          "name": "techBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "partnerBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "partnersEnabled",
+          "ty_idx": 5
+        },
+        {
+          "name": "investorBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "seatMargin",
+          "ty_idx": 6
+        },
+        {
+          "name": "surplusToWinner",
+          "ty_idx": 5
+        },
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "name",
+          "ty_idx": 3
+        },
+        {
+          "name": "addrs",
+          "ty_idx": 28
+        },
+        {
+          "name": "refs",
+          "ty_idx": 42
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "VersionInfo",
+      "ty_idx": 37,
+      "fields": [
+        {
+          "name": "hash",
+          "ty_idx": 36
+        },
+        {
+          "name": "depth",
+          "ty_idx": 14
+        },
+        {
+          "name": "open",
+          "ty_idx": 5
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RootStorage",
+      "ty_idx": 35,
+      "fields": [
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "policy",
+          "ty_idx": 29
+        },
+        {
+          "name": "accountCode",
+          "ty_idx": 3
+        },
+        {
+          "name": "profileHash",
+          "ty_idx": 36
+        },
+        {
+          "name": "profileDepth",
+          "ty_idx": 14
+        },
+        {
+          "name": "latest",
+          "ty_idx": 9
+        },
+        {
+          "name": "roomCode",
+          "ty_idx": 3
+        },
+        {
+          "name": "versions",
+          "ty_idx": 38
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "CreateParams",
+      "ty_idx": 18,
+      "fields": [
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "bet",
+          "ty_idx": 6
+        },
+        {
+          "name": "capacity",
+          "ty_idx": 19
+        },
+        {
+          "name": "isPrivate",
+          "ty_idx": 5
+        },
+        {
+          "name": "name",
+          "ty_idx": 3
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "JoinTarget",
+      "ty_idx": 15,
+      "fields": [
+        {
+          "name": "creator",
+          "ty_idx": 7
+        },
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Enter",
+      "ty_idx": 12,
+      "prefix": {
+        "prefix_num": 2119631363,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "deadline",
+          "ty_idx": 9
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "first",
+          "ty_idx": 5
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "stamped",
+          "ty_idx": 5
+        },
+        {
+          "name": "registered",
+          "ty_idx": 5
+        },
+        {
+          "name": "eligible",
+          "ty_idx": 5
+        },
+        {
+          "name": "bps",
+          "ty_idx": 14
+        },
+        {
+          "name": "join",
+          "ty_idx": 17
+        },
+        {
+          "name": "create",
+          "ty_idx": 21
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomInit",
+      "ty_idx": 39,
+      "prefix": {
+        "prefix_num": 2119631364,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "deadline",
+          "ty_idx": 9
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "first",
+          "ty_idx": 5
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "bps",
+          "ty_idx": 14
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "params",
+          "ty_idx": 20
+        },
+        {
+          "name": "terms",
+          "ty_idx": 43
+        },
+        {
+          "name": "creatorProfile",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomEvent",
+      "ty_idx": 22,
+      "prefix": {
+        "prefix_num": 2119631365,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "kind",
+          "ty_idx": 19
+        },
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "creator",
+          "ty_idx": 7
+        },
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Accepted",
+      "ty_idx": 44,
+      "prefix": {
+        "prefix_num": 2119631366,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "room",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Closed",
+      "ty_idx": 46,
+      "prefix": {
+        "prefix_num": 2119631367,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "room",
+          "ty_idx": 7
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "EnterFailed",
+      "ty_idx": 50,
+      "prefix": {
+        "prefix_num": 2119631368,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "original",
+          "ty_idx": 3
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "InitFailed",
+      "ty_idx": 51,
+      "prefix": {
+        "prefix_num": 2119631369,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "first",
+          "ty_idx": 5
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RegisterPartner",
+      "ty_idx": 23,
+      "prefix": {
+        "prefix_num": 2119631376,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "expectedManualApproval",
+          "ty_idx": 5
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "PartnerInit",
+      "ty_idx": 48,
+      "prefix": {
+        "prefix_num": 2119631377,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "approved",
+          "ty_idx": 5
+        },
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "ownerAmount",
+          "ty_idx": 6
+        },
+        {
+          "name": "investor",
+          "ty_idx": 13
+        },
+        {
+          "name": "investorAmount",
+          "ty_idx": 6
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "SetPartner",
+      "ty_idx": 24,
+      "prefix": {
+        "prefix_num": 2119631378,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "approved",
+          "ty_idx": 5
+        },
+        {
+          "name": "enabled",
+          "ty_idx": 5
+        },
+        {
+          "name": "customBps",
+          "ty_idx": 14
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "PartnerPolicy",
+      "ty_idx": 49,
+      "prefix": {
+        "prefix_num": 2119631379,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "approved",
+          "ty_idx": 5
+        },
+        {
+          "name": "enabled",
+          "ty_idx": 5
+        },
+        {
+          "name": "customBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "excessTo",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "SetPolicy",
+      "ty_idx": 25,
+      "prefix": {
+        "prefix_num": 2119631380,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "policy",
+          "ty_idx": 29
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "PublishVersion",
+      "ty_idx": 30,
+      "prefix": {
+        "prefix_num": 2119631381,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "code",
+          "ty_idx": 3
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "SetVersionOpen",
+      "ty_idx": 31,
+      "prefix": {
+        "prefix_num": 2119631382,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "open",
+          "ty_idx": 5
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "TopUp",
+      "ty_idx": 32,
+      "prefix": {
+        "prefix_num": 2119631385,
+        "prefix_len": 32
+      },
+      "fields": []
+    },
+    {
+      "kind": "struct",
+      "name": "RecoverEnter",
+      "ty_idx": 33,
+      "prefix": {
+        "prefix_num": 2119631387,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "original",
+          "ty_idx": 34
+        },
+        {
+          "name": "roomCode",
+          "ty_idx": 3
+        },
+        {
+          "name": "excessTo",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "ProbeEntry",
+      "ty_idx": 47,
+      "prefix": {
+        "prefix_num": 2119631388,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "original",
+          "ty_idx": 34
+        },
+        {
+          "name": "excessTo",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "EntryAbsent",
+      "ty_idx": 45,
+      "prefix": {
+        "prefix_num": 2119631389,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "storage_ty_idx": 35
+  },
+  "incoming_messages": [
+    {
+      "body_ty_idx": 12
+    },
+    {
+      "body_ty_idx": 22
+    },
+    {
+      "body_ty_idx": 23
+    },
+    {
+      "body_ty_idx": 24
+    },
+    {
+      "body_ty_idx": 25
+    },
+    {
+      "body_ty_idx": 30
+    },
+    {
+      "body_ty_idx": 31
+    },
+    {
+      "body_ty_idx": 32
+    },
+    {
+      "body_ty_idx": 33
+    }
+  ],
+  "incoming_external": [],
+  "outgoing_messages": [
+    {
+      "body_ty_idx": 12
+    },
+    {
+      "body_ty_idx": 39
+    },
+    {
+      "body_ty_idx": 44
+    },
+    {
+      "body_ty_idx": 45
+    },
+    {
+      "body_ty_idx": 46
+    },
+    {
+      "body_ty_idx": 47
+    },
+    {
+      "body_ty_idx": 48
+    },
+    {
+      "body_ty_idx": 49
+    },
+    {
+      "body_ty_idx": 50
+    },
+    {
+      "body_ty_idx": 51
+    },
+    {
+      "body_ty_idx": 3
+    }
+  ],
+  "emitted_events": [],
+  "get_methods": [
+    {
+      "tvm_method_id": 105599,
+      "name": "get_policy",
+      "parameters": [],
+      "return_ty_idx": 3
+    },
+    {
+      "tvm_method_id": 83011,
+      "name": "get_room_version",
+      "parameters": [],
+      "return_ty_idx": 1
+    },
+    {
+      "tvm_method_id": 82320,
+      "name": "get_version",
+      "parameters": [
+        {
+          "name": "version",
+          "ty_idx": 1
+        }
+      ],
+      "return_ty_idx": 52
+    },
+    {
+      "tvm_method_id": 98424,
+      "name": "get_profile_address",
+      "parameters": [
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        }
+      ],
+      "return_ty_idx": 7
+    },
+    {
+      "tvm_method_id": 68369,
+      "name": "get_account_address",
+      "parameters": [
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        }
+      ],
+      "return_ty_idx": 7
+    },
+    {
+      "tvm_method_id": 90196,
+      "name": "get_room_address",
+      "parameters": [
+        {
+          "name": "creator",
+          "ty_idx": 7
+        },
+        {
+          "name": "seq",
+          "ty_idx": 1
+        },
+        {
+          "name": "version",
+          "ty_idx": 1
+        }
+      ],
+      "return_ty_idx": 7
+    },
+    {
+      "tvm_method_id": 128498,
+      "name": "get_code_refs",
+      "parameters": [],
+      "return_ty_idx": 3
+    },
+    {
+      "tvm_method_id": 108004,
+      "name": "get_storage",
+      "parameters": [],
+      "return_ty_idx": 35
+    },
+    {
+      "tvm_method_id": 119219,
+      "name": "get_create_quote",
+      "parameters": [
+        {
+          "name": "capacity",
+          "ty_idx": 1
+        }
+      ],
+      "return_ty_idx": 53
+    },
+    {
+      "tvm_method_id": 100839,
+      "name": "get_rent_quote",
+      "parameters": [
+        {
+          "name": "seconds",
+          "ty_idx": 1
+        }
+      ],
+      "return_ty_idx": 1
+    },
+    {
+      "tvm_method_id": 69102,
+      "name": "get_root_rent_quote",
+      "parameters": [
+        {
+          "name": "seconds",
+          "ty_idx": 1
+        }
+      ],
+      "return_ty_idx": 1
+    },
+    {
+      "tvm_method_id": 66493,
+      "name": "get_registration_quote",
+      "parameters": [],
+      "return_ty_idx": 53
+    }
+  ],
+  "thrown_errors": [
+    {
+      "kind": "constant",
+      "name": "E_AUTH",
+      "err_code": 401
+    },
+    {
+      "kind": "constant",
+      "name": "E_STATE",
+      "err_code": 402
+    },
+    {
+      "kind": "constant",
+      "name": "E_VALUE",
+      "err_code": 403
+    },
+    {
+      "kind": "constant",
+      "name": "E_POLICY",
+      "err_code": 405
+    },
+    {
+      "kind": "constant",
+      "name": "E_VERSION",
+      "err_code": 412
+    },
+    {
+      "kind": "constant",
+      "name": "E_DEADLINE",
+      "err_code": 414
+    }
+  ],
+  "compiler_name": "tolk",
+  "compiler_version": "1.4.2"
+}
