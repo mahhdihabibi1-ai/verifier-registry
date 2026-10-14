@@ -1,0 +1,1020 @@
+{
+  "abi_schema_version": "1.0",
+  "contract_name": "V2RoomB",
+  "unique_types": [
+    {
+      "kind": "void"
+    },
+    {
+      "kind": "int"
+    },
+    {
+      "kind": "slice"
+    },
+    {
+      "kind": "cell"
+    },
+    {
+      "kind": "builder"
+    },
+    {
+      "kind": "bool"
+    },
+    {
+      "kind": "coins"
+    },
+    {
+      "kind": "address"
+    },
+    {
+      "kind": "intN",
+      "n": 32
+    },
+    {
+      "kind": "uintN",
+      "n": 32
+    },
+    {
+      "kind": "intN",
+      "n": 64
+    },
+    {
+      "kind": "uintN",
+      "n": 64
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomInit"
+    },
+    {
+      "kind": "addressOpt"
+    },
+    {
+      "kind": "uintN",
+      "n": 16
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "CreateParams"
+    },
+    {
+      "kind": "uintN",
+      "n": 8
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 15
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Terms"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "PolicyAddrs"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 19
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "CodeRefs"
+    },
+    {
+      "kind": "uintN",
+      "n": 256
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 21
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 18
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Enter"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "JoinTarget"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 26
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 27
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 17
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Leave"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Draw"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "CloseAck"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RetryClose"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "TopUp"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "ProbeEntry"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 25
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "ReceiptAck"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RetryReceipt"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomStorage"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomState"
+    },
+    {
+      "kind": "uintN",
+      "n": 2
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Seat"
+    },
+    {
+      "kind": "mapKV",
+      "key_ty_idx": 7,
+      "value_ty_idx": 42
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "DrawState"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 44
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 45
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Receipt"
+    },
+    {
+      "kind": "mapKV",
+      "key_ty_idx": 7,
+      "value_ty_idx": 47
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 40
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 49
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Credit"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomEvent"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomSnapshot"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 39
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "RoomSettled"
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        1,
+        1
+      ]
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "struct_instantiations": [],
+  "alias_instantiations": [],
+  "declarations": [
+    {
+      "kind": "struct",
+      "name": "PolicyAddrs",
+      "ty_idx": 19,
+      "fields": [
+        {
+          "name": "investor",
+          "ty_idx": 13
+        },
+        {
+          "name": "techFund",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "CodeRefs",
+      "ty_idx": 21,
+      "fields": [
+        {
+          "name": "accountHash",
+          "ty_idx": 22
+        },
+        {
+          "name": "accountDepth",
+          "ty_idx": 14
+        },
+        {
+          "name": "profileHash",
+          "ty_idx": 22
+        },
+        {
+          "name": "profileDepth",
+          "ty_idx": 14
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Terms",
+      "ty_idx": 18,
+      "fields": [
+        {
+          "name": "feePercent",
+          "ty_idx": 16
+        },
+        {
+          "name": "techBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "partnerBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "partnersEnabled",
+          "ty_idx": 5
+        },
+        {
+          "name": "investorBps",
+          "ty_idx": 14
+        },
+        {
+          "name": "seatMargin",
+          "ty_idx": 6
+        },
+        {
+          "name": "surplusToWinner",
+          "ty_idx": 5
+        },
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "name",
+          "ty_idx": 3
+        },
+        {
+          "name": "addrs",
+          "ty_idx": 20
+        },
+        {
+          "name": "refs",
+          "ty_idx": 23
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Receipt",
+      "ty_idx": 47,
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Seat",
+      "ty_idx": 42,
+      "fields": [
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "bps",
+          "ty_idx": 14
+        },
+        {
+          "name": "deposit",
+          "ty_idx": 6
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "DrawState",
+      "ty_idx": 44,
+      "fields": [
+        {
+          "name": "fillBlockLt",
+          "ty_idx": 11
+        },
+        {
+          "name": "entropy",
+          "ty_idx": 22
+        },
+        {
+          "name": "hops",
+          "ty_idx": 16
+        },
+        {
+          "name": "techCover",
+          "ty_idx": 6
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomState",
+      "ty_idx": 40,
+      "fields": [
+        {
+          "name": "phase",
+          "ty_idx": 41
+        },
+        {
+          "name": "bet",
+          "ty_idx": 6
+        },
+        {
+          "name": "capacity",
+          "ty_idx": 16
+        },
+        {
+          "name": "isPrivate",
+          "ty_idx": 5
+        },
+        {
+          "name": "count",
+          "ty_idx": 16
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "createdAt",
+          "ty_idx": 9
+        },
+        {
+          "name": "buffer",
+          "ty_idx": 6
+        },
+        {
+          "name": "creatorProfile",
+          "ty_idx": 7
+        },
+        {
+          "name": "terms",
+          "ty_idx": 24
+        },
+        {
+          "name": "seats",
+          "ty_idx": 43
+        },
+        {
+          "name": "draw",
+          "ty_idx": 46
+        },
+        {
+          "name": "receipts",
+          "ty_idx": 48
+        },
+        {
+          "name": "receiptCount",
+          "ty_idx": 16
+        },
+        {
+          "name": "creatorClosed",
+          "ty_idx": 5
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomStorage",
+      "ty_idx": 39,
+      "fields": [
+        {
+          "name": "root",
+          "ty_idx": 7
+        },
+        {
+          "name": "creator",
+          "ty_idx": 7
+        },
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "state",
+          "ty_idx": 50
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "CreateParams",
+      "ty_idx": 15,
+      "fields": [
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "bet",
+          "ty_idx": 6
+        },
+        {
+          "name": "capacity",
+          "ty_idx": 16
+        },
+        {
+          "name": "isPrivate",
+          "ty_idx": 5
+        },
+        {
+          "name": "name",
+          "ty_idx": 3
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "JoinTarget",
+      "ty_idx": 26,
+      "fields": [
+        {
+          "name": "creator",
+          "ty_idx": 7
+        },
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Enter",
+      "ty_idx": 25,
+      "prefix": {
+        "prefix_num": 2119631363,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "deadline",
+          "ty_idx": 9
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "first",
+          "ty_idx": 5
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "stamped",
+          "ty_idx": 5
+        },
+        {
+          "name": "registered",
+          "ty_idx": 5
+        },
+        {
+          "name": "eligible",
+          "ty_idx": 5
+        },
+        {
+          "name": "bps",
+          "ty_idx": 14
+        },
+        {
+          "name": "join",
+          "ty_idx": 28
+        },
+        {
+          "name": "create",
+          "ty_idx": 29
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomInit",
+      "ty_idx": 12,
+      "prefix": {
+        "prefix_num": 2119631364,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "deadline",
+          "ty_idx": 9
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "first",
+          "ty_idx": 5
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "bps",
+          "ty_idx": 14
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "params",
+          "ty_idx": 17
+        },
+        {
+          "name": "terms",
+          "ty_idx": 24
+        },
+        {
+          "name": "creatorProfile",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomEvent",
+      "ty_idx": 52,
+      "prefix": {
+        "prefix_num": 2119631365,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "kind",
+          "ty_idx": 16
+        },
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "creator",
+          "ty_idx": 7
+        },
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Leave",
+      "ty_idx": 30,
+      "prefix": {
+        "prefix_num": 2119631370,
+        "prefix_len": 32
+      },
+      "fields": []
+    },
+    {
+      "kind": "struct",
+      "name": "CloseAck",
+      "ty_idx": 32,
+      "prefix": {
+        "prefix_num": 2119631371,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "seq",
+          "ty_idx": 11
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RetryClose",
+      "ty_idx": 33,
+      "prefix": {
+        "prefix_num": 2119631372,
+        "prefix_len": 32
+      },
+      "fields": []
+    },
+    {
+      "kind": "struct",
+      "name": "Draw",
+      "ty_idx": 31,
+      "prefix": {
+        "prefix_num": 2119631373,
+        "prefix_len": 32
+      },
+      "fields": []
+    },
+    {
+      "kind": "struct",
+      "name": "Credit",
+      "ty_idx": 51,
+      "prefix": {
+        "prefix_num": 2119631374,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "role",
+          "ty_idx": 16
+        },
+        {
+          "name": "amount",
+          "ty_idx": 6
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "TopUp",
+      "ty_idx": 34,
+      "prefix": {
+        "prefix_num": 2119631385,
+        "prefix_len": 32
+      },
+      "fields": []
+    },
+    {
+      "kind": "struct",
+      "name": "ProbeEntry",
+      "ty_idx": 35,
+      "prefix": {
+        "prefix_num": 2119631388,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "original",
+          "ty_idx": 36
+        },
+        {
+          "name": "excessTo",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "ReceiptAck",
+      "ty_idx": 37,
+      "prefix": {
+        "prefix_num": 2119631390,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RetryReceipt",
+      "ty_idx": 38,
+      "prefix": {
+        "prefix_num": 2119631391,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomSnapshot",
+      "ty_idx": 53,
+      "prefix": {
+        "prefix_num": 2119692803,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "storage",
+          "ty_idx": 54
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "RoomSettled",
+      "ty_idx": 55,
+      "prefix": {
+        "prefix_num": 2119692804,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "winner",
+          "ty_idx": 7
+        },
+        {
+          "name": "amount",
+          "ty_idx": 6
+        },
+        {
+          "name": "storage",
+          "ty_idx": 54
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "storage_ty_idx": 39
+  },
+  "incoming_messages": [
+    {
+      "body_ty_idx": 12
+    },
+    {
+      "body_ty_idx": 25
+    },
+    {
+      "body_ty_idx": 30
+    },
+    {
+      "body_ty_idx": 31
+    },
+    {
+      "body_ty_idx": 32
+    },
+    {
+      "body_ty_idx": 33
+    },
+    {
+      "body_ty_idx": 34
+    },
+    {
+      "body_ty_idx": 35
+    },
+    {
+      "body_ty_idx": 37
+    },
+    {
+      "body_ty_idx": 38
+    }
+  ],
+  "incoming_external": [],
+  "outgoing_messages": [
+    {
+      "body_ty_idx": 3
+    },
+    {
+      "body_ty_idx": 51
+    },
+    {
+      "body_ty_idx": 52
+    },
+    {
+      "body_ty_idx": 31
+    }
+  ],
+  "emitted_events": [
+    {
+      "body_ty_idx": 53
+    },
+    {
+      "body_ty_idx": 55
+    }
+  ],
+  "get_methods": [
+    {
+      "tvm_method_id": 69043,
+      "name": "get_room",
+      "parameters": [],
+      "return_ty_idx": 56
+    },
+    {
+      "tvm_method_id": 92012,
+      "name": "get_join_value",
+      "parameters": [],
+      "return_ty_idx": 57
+    },
+    {
+      "tvm_method_id": 106699,
+      "name": "get_draw",
+      "parameters": [],
+      "return_ty_idx": 58
+    },
+    {
+      "tvm_method_id": 125606,
+      "name": "get_note_value",
+      "parameters": [],
+      "return_ty_idx": 1
+    },
+    {
+      "tvm_method_id": 108603,
+      "name": "get_room_buffer",
+      "parameters": [],
+      "return_ty_idx": 1
+    },
+    {
+      "tvm_method_id": 86957,
+      "name": "get_state",
+      "parameters": [],
+      "return_ty_idx": 50
+    },
+    {
+      "tvm_method_id": 105581,
+      "name": "get_receipts",
+      "parameters": [],
+      "return_ty_idx": 3
+    },
+    {
+      "tvm_method_id": 86328,
+      "name": "get_draw_value",
+      "parameters": [],
+      "return_ty_idx": 1
+    },
+    {
+      "tvm_method_id": 124338,
+      "name": "get_close_value",
+      "parameters": [],
+      "return_ty_idx": 1
+    },
+    {
+      "tvm_method_id": 126675,
+      "name": "get_room_code_variant",
+      "parameters": [],
+      "return_ty_idx": 1
+    }
+  ],
+  "thrown_errors": [
+    {
+      "kind": "constant",
+      "name": "E_AUTH",
+      "err_code": 401
+    },
+    {
+      "kind": "constant",
+      "name": "E_STATE",
+      "err_code": 402
+    },
+    {
+      "kind": "constant",
+      "name": "E_VALUE",
+      "err_code": 403
+    },
+    {
+      "kind": "constant",
+      "name": "E_POLICY",
+      "err_code": 405
+    },
+    {
+      "kind": "constant",
+      "name": "E_FULL",
+      "err_code": 410
+    },
+    {
+      "kind": "constant",
+      "name": "E_SEATED",
+      "err_code": 411
+    },
+    {
+      "kind": "constant",
+      "name": "E_VERSION",
+      "err_code": 412
+    },
+    {
+      "kind": "constant",
+      "name": "E_PENDING",
+      "err_code": 413
+    },
+    {
+      "kind": "constant",
+      "name": "E_DEADLINE",
+      "err_code": 414
+    }
+  ],
+  "compiler_name": "tolk",
+  "compiler_version": "1.4.2"
+}
