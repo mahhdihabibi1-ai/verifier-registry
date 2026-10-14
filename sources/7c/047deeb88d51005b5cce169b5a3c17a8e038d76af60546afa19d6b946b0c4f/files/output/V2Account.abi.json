@@ -1,0 +1,515 @@
+{
+  "abi_schema_version": "1.0",
+  "contract_name": "V2Account",
+  "unique_types": [
+    {
+      "kind": "void"
+    },
+    {
+      "kind": "int"
+    },
+    {
+      "kind": "slice"
+    },
+    {
+      "kind": "cell"
+    },
+    {
+      "kind": "builder"
+    },
+    {
+      "kind": "bool"
+    },
+    {
+      "kind": "coins"
+    },
+    {
+      "kind": "address"
+    },
+    {
+      "kind": "intN",
+      "n": 32
+    },
+    {
+      "kind": "uintN",
+      "n": 32
+    },
+    {
+      "kind": "intN",
+      "n": 64
+    },
+    {
+      "kind": "uintN",
+      "n": 64
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "PartnerInit"
+    },
+    {
+      "kind": "addressOpt"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "PartnerPolicy"
+    },
+    {
+      "kind": "uintN",
+      "n": 16
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Enter"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "JoinTarget"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 17
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 18
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "CreateParams"
+    },
+    {
+      "kind": "uintN",
+      "n": 8
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 20
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 22
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Credit"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "Withdraw"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "TopUp"
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "AccountStorage"
+    },
+    {
+      "kind": "uintN",
+      "n": 256
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "AccountState"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 29
+    },
+    {
+      "kind": "nullable",
+      "inner_ty_idx": 30
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "AccountSnapshot"
+    },
+    {
+      "kind": "cellOf",
+      "inner_ty_idx": 27
+    },
+    {
+      "kind": "StructRef",
+      "struct_name": "EnterFailed"
+    },
+    {
+      "kind": "tensor",
+      "items_ty_idx": [
+        5,
+        5,
+        5,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "struct_instantiations": [],
+  "alias_instantiations": [],
+  "declarations": [
+    {
+      "kind": "struct",
+      "name": "AccountState",
+      "ty_idx": 29,
+      "fields": [
+        {
+          "name": "paid",
+          "ty_idx": 5
+        },
+        {
+          "name": "approved",
+          "ty_idx": 5
+        },
+        {
+          "name": "enabled",
+          "ty_idx": 5
+        },
+        {
+          "name": "customBps",
+          "ty_idx": 15
+        },
+        {
+          "name": "credited",
+          "ty_idx": 6
+        },
+        {
+          "name": "withdrawn",
+          "ty_idx": 6
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "AccountStorage",
+      "ty_idx": 27,
+      "fields": [
+        {
+          "name": "root",
+          "ty_idx": 7
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "profileHash",
+          "ty_idx": 28
+        },
+        {
+          "name": "profileDepth",
+          "ty_idx": 15
+        },
+        {
+          "name": "state",
+          "ty_idx": 31
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "CreateParams",
+      "ty_idx": 20,
+      "fields": [
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        },
+        {
+          "name": "bet",
+          "ty_idx": 6
+        },
+        {
+          "name": "capacity",
+          "ty_idx": 21
+        },
+        {
+          "name": "isPrivate",
+          "ty_idx": 5
+        },
+        {
+          "name": "name",
+          "ty_idx": 3
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "JoinTarget",
+      "ty_idx": 17,
+      "fields": [
+        {
+          "name": "creator",
+          "ty_idx": 7
+        },
+        {
+          "name": "seq",
+          "ty_idx": 11
+        },
+        {
+          "name": "version",
+          "ty_idx": 9
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Enter",
+      "ty_idx": 16,
+      "prefix": {
+        "prefix_num": 2119631363,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "deadline",
+          "ty_idx": 9
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "first",
+          "ty_idx": 5
+        },
+        {
+          "name": "partner",
+          "ty_idx": 13
+        },
+        {
+          "name": "stamped",
+          "ty_idx": 5
+        },
+        {
+          "name": "registered",
+          "ty_idx": 5
+        },
+        {
+          "name": "eligible",
+          "ty_idx": 5
+        },
+        {
+          "name": "bps",
+          "ty_idx": 15
+        },
+        {
+          "name": "join",
+          "ty_idx": 19
+        },
+        {
+          "name": "create",
+          "ty_idx": 23
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "EnterFailed",
+      "ty_idx": 34,
+      "prefix": {
+        "prefix_num": 2119631368,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "original",
+          "ty_idx": 3
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Credit",
+      "ty_idx": 24,
+      "prefix": {
+        "prefix_num": 2119631374,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "role",
+          "ty_idx": 21
+        },
+        {
+          "name": "amount",
+          "ty_idx": 6
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "Withdraw",
+      "ty_idx": 25,
+      "prefix": {
+        "prefix_num": 2119631375,
+        "prefix_len": 32
+      },
+      "fields": []
+    },
+    {
+      "kind": "struct",
+      "name": "PartnerInit",
+      "ty_idx": 12,
+      "prefix": {
+        "prefix_num": 2119631377,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "queryId",
+          "ty_idx": 11
+        },
+        {
+          "name": "wallet",
+          "ty_idx": 7
+        },
+        {
+          "name": "approved",
+          "ty_idx": 5
+        },
+        {
+          "name": "owner",
+          "ty_idx": 7
+        },
+        {
+          "name": "ownerAmount",
+          "ty_idx": 6
+        },
+        {
+          "name": "investor",
+          "ty_idx": 13
+        },
+        {
+          "name": "investorAmount",
+          "ty_idx": 6
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "PartnerPolicy",
+      "ty_idx": 14,
+      "prefix": {
+        "prefix_num": 2119631379,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "approved",
+          "ty_idx": 5
+        },
+        {
+          "name": "enabled",
+          "ty_idx": 5
+        },
+        {
+          "name": "customBps",
+          "ty_idx": 15
+        },
+        {
+          "name": "excessTo",
+          "ty_idx": 7
+        }
+      ]
+    },
+    {
+      "kind": "struct",
+      "name": "TopUp",
+      "ty_idx": 26,
+      "prefix": {
+        "prefix_num": 2119631385,
+        "prefix_len": 32
+      },
+      "fields": []
+    },
+    {
+      "kind": "struct",
+      "name": "AccountSnapshot",
+      "ty_idx": 32,
+      "prefix": {
+        "prefix_num": 2119692802,
+        "prefix_len": 32
+      },
+      "fields": [
+        {
+          "name": "storage",
+          "ty_idx": 33
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "storage_ty_idx": 27
+  },
+  "incoming_messages": [
+    {
+      "body_ty_idx": 12
+    },
+    {
+      "body_ty_idx": 14
+    },
+    {
+      "body_ty_idx": 16
+    },
+    {
+      "body_ty_idx": 24
+    },
+    {
+      "body_ty_idx": 25
+    },
+    {
+      "body_ty_idx": 26
+    }
+  ],
+  "incoming_external": [],
+  "outgoing_messages": [
+    {
+      "body_ty_idx": 24
+    },
+    {
+      "body_ty_idx": 3
+    },
+    {
+      "body_ty_idx": 16
+    },
+    {
+      "body_ty_idx": 34
+    }
+  ],
+  "emitted_events": [
+    {
+      "body_ty_idx": 32
+    }
+  ],
+  "get_methods": [
+    {
+      "tvm_method_id": 110232,
+      "name": "get_account",
+      "parameters": [],
+      "return_ty_idx": 35
+    }
+  ],
+  "thrown_errors": [
+    {
+      "kind": "constant",
+      "name": "E_AUTH",
+      "err_code": 401
+    },
+    {
+      "kind": "constant",
+      "name": "E_VALUE",
+      "err_code": 403
+    }
+  ],
+  "compiler_name": "tolk",
+  "compiler_version": "1.4.2"
+}
